@@ -1,11 +1,13 @@
-
 from odoo import http
 from odoo.http import request, Response
-import json
 
 class EnquiryController(http.Controller):
 
-    @http.route('/enquiry/submit', type='json', auth='public', methods=['POST'], csrf=False, website=True)
+    @http.route('/enquiry/form', type='http', auth='public', website=True)
+    def enquiry_form(self, **kwargs):
+        return request.render('enquiry_form_custom.enquiry_template')
+
+    @http.route('/enquiry/submit', type='json', auth='public', methods=['POST'], csrf=False)
     def submit_enquiry(self, **kwargs):
         try:
             name = kwargs.get('name')

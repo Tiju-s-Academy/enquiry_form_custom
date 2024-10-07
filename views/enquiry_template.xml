@@ -1,12 +1,28 @@
 <odoo>
-    <template id="enquiry_form">
-        <form id="enquiryForm" method="POST" action="/enquiry/submit" target="hiddenFrame">
-            <input type="text" name="name" placeholder="Your Name"/><br/>
-            <input type="text" name="phone" placeholder="Phone"/><br/>
-            <input type="email" name="email" placeholder="Email"/><br/>
-            <input type="text" name="course" placeholder="Course Interested"/><br/>
-            <button type="submit">Submit</button>
-        </form>
-        <iframe id="hiddenFrame" name="hiddenFrame" style="display:none;"></iframe>
+    <template id="enquiry_template" name="Enquiry Form">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Enquiry Form</h1>
+                <form action="/enquiry/submit" method="post">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" name="name" required="True"/>
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <input type="tel" name="phone" required="True"/>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="email" name="email" required="True"/>
+                    </div>
+                    <div>
+                        <label>Course</label>
+                        <input type="text" name="course" required="True"/>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </t>
     </template>
 </odoo>
