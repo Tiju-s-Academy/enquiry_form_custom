@@ -36,4 +36,4 @@ class EnquiryController(http.Controller):
 
     @http.route('/web_enquiry', type='http', auth='public', website=True)
     def enquiry_form(self, **kwargs):
-        return request.render('your_module_name.enquiry_template')  # Make sure to replace 'your_module_name.enquiry_template' with your actual template reference
+        return request.render('enquiry_form_custom.enquiry_template')  # Make sure to replace 'your_module_name.enquiry_template' with your actual template reference
