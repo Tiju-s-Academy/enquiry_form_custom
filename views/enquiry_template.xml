@@ -1,10 +1,10 @@
 <odoo>
     <template id="enquiry_form">
         <form id="enquiryForm" method="POST" action="/enquiry/submit" target="hiddenFrame">
-            <input type="text" name="name" placeholder="Your Name" required/><br>
-            <input type="text" name="phone" placeholder="Phone" required/><br>
-            <input type="email" name="email" placeholder="Email" required/><br>
-            <input type="text" name="course" placeholder="Course Interested" required/><br>
+            <input type="text" name="name" placeholder="Your Name"/><br>
+            <input type="text" name="phone" placeholder="Phone"/><br>
+            <input type="email" name="email" placeholder="Email"/><br>
+            <input type="text" name="course" placeholder="Course Interested"/><br>
             <button type="submit">Submit</button>
         </form>
 
