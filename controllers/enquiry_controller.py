@@ -1,13 +1,10 @@
 from odoo import http
 from odoo.http import request, Response
+import json
 
 class EnquiryController(http.Controller):
 
-    @http.route('/enquiry/form', type='http', auth='public', website=True)
-    def enquiry_form(self, **kwargs):
-        return request.render('enquiry_form_custom.enquiry_template')
-
-    @http.route('/enquiry/submit', type='json', auth='public', methods=['POST'], csrf=False)
+    @http.route('/web_enquiry/submit', type='json', auth='public', methods=['POST'], csrf=False, website=True)
     def submit_enquiry(self, **kwargs):
         try:
             name = kwargs.get('name')
@@ -28,7 +25,7 @@ class EnquiryController(http.Controller):
         except Exception as e:
             return json.dumps({'success': False, 'error': str(e)})
 
-    @http.route('/enquiry/cors', type='http', auth='public', methods=['OPTIONS'], csrf=False)
+    @http.route('/web_enquiry/cors', type='http', auth='public', methods=['OPTIONS'], csrf=False)
     def cors_enquiry(self, **kwargs):
         headers = {
             'Access-Control-Allow-Origin': '*',
@@ -36,3 +33,7 @@ class EnquiryController(http.Controller):
             'Access-Control-Allow-Headers': 'Content-Type',
         }
         return Response(status=200, headers=headers)
+
+    @http.route('/web_enquiry', type='http', auth='public', website=True)
+    def enquiry_form(self, **kwargs):
+        return request.render('your_module_name.enquiry_template')  # Make sure to replace 'your_module_name.enquiry_template' with your actual template reference
