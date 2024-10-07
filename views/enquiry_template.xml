@@ -1,13 +1,12 @@
 <odoo>
     <template id="enquiry_form">
         <form id="enquiryForm" method="POST" action="/enquiry/submit" target="hiddenFrame">
-            <input type="text" name="name" placeholder="Your Name"/><br>
-            <input type="text" name="phone" placeholder="Phone"/><br>
-            <input type="email" name="email" placeholder="Email"/><br>
-            <input type="text" name="course" placeholder="Course Interested"/><br>
+            <input type="text" name="name" placeholder="Your Name"/><br/>
+            <input type="text" name="phone" placeholder="Phone"/><br/>
+            <input type="email" name="email" placeholder="Email"/><br/>
+            <input type="text" name="course" placeholder="Course Interested"/><br/>
             <button type="submit">Submit</button>
         </form>
-
         <iframe id="hiddenFrame" name="hiddenFrame" style="display:none;"></iframe>
     </template>
 </odoo>
