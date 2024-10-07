@@ -1,4 +1,3 @@
-
 <odoo>
     <template id="enquiry_form">
         <form id="enquiryForm" method="POST" action="/enquiry/submit" target="hiddenFrame">
