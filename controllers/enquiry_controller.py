@@ -5,7 +5,7 @@ import json
 
 class EnquiryController(http.Controller):
 
-    @http.route('/enquiry/submit', type='json', auth='public', methods=['POST'], csrf=False)
+    @http.route('/enquiry/submit', type='json', auth='public', methods=['POST'], csrf=False, website=True)
     def submit_enquiry(self, **kwargs):
         try:
             name = kwargs.get('name')
